@@ -446,6 +446,27 @@ v7 + lag variables + rolling-window features
 
 ---
 
+## Availability
+
+### GitHub Repository
+
+https://github.com/jssanchez-garreta/dataset-multimodal-dengue-brazil
+
+### Zenodo Archive
+
+DOI: 10.5281/zenodo.XXXXXXXX
+
+URL:
+https://doi.org/10.5281/zenodo.XXXXXXXX
+
+### Citation
+
+Please cite this dataset using the information provided in:
+
+- CITATION.cff
+
+---
+
 ## Authors
 
 - Raquel Sánchez-Marqués (MRC Unit The Gambia at LSHTM)
