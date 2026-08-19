@@ -1,0 +1,58 @@
+cff-version: 1.2.0
+
+type: dataset
+
+doi: 10.5281/zenodo.XXXXXXXX
+
+title: DATASET_MULTIMODAL_V8
+
+message: >
+  If you use this dataset, please cite the dataset and
+  associated publication.
+
+authors:
+  - family-names: Sánchez-Marqués
+    given-names: Raquel
+    affiliation: MRC Unit The Gambia at LSHTM
+    orcid: 0000-0001-6123-022X
+
+  - family-names: Sánchez
+    given-names: J. Salvador
+    affiliation: Universitat Jaume I
+    orcid: 0000-0003-1053-4658
+
+keywords:
+  - dengue
+  - epidemiology
+  - forecasting
+  - nowcasting
+  - machine learning
+  - Brazil
+  - remote sensing
+  - climate
+  - public health
+
+license: CC-BY-4.0
+
+abstract: >
+  DATASET_MULTIMODAL_V8 is a nationwide municipal-level
+  multimodal dataset for dengue surveillance, nowcasting
+  and forecasting in Brazil covering the period 2010–2025.
+  The dataset integrates epidemiological, meteorological,
+  precipitation, remote sensing, ENSO, topographic,
+  land-cover, demographic and sanitation information.
+
+repository-code: https://github.com/<YOUR_REPOSITORY>
+
+version: v8
+
+date-released: 2026
+
+preferred-citation:
+  title: DATASET_MULTIMODAL_V8
+  authors:
+    - family-names: Sánchez-Marqués
+      given-names: Raquel
+    - family-names: Sánchez
+      given-names: J. Salvador
+  year: 2026

@@ -1,0 +1,88 @@
+Variable,Category,Description
+codigo_ibge,Identifier,IBGE municipality code
+municipio,Identifier,Municipality name
+estado,Identifier,Brazilian state
+data_iniSE,Temporal,Start date of epidemiological week
+SE,Temporal,Epidemiological week identifier
+anio,Temporal,Calendar year
+mes,Temporal,Calendar month
+semana,Temporal,Epidemiological week number
+casos,Epidemiology,Reported dengue cases
+casos_est,Epidemiology,Estimated dengue cases
+casos_est_min,Epidemiology,Lower estimate of dengue cases
+casos_est_max,Epidemiology,Upper estimate of dengue cases
+casprov,Epidemiology,Probable dengue cases
+p_inc100k,Epidemiology,Estimated dengue incidence per 100000 inhabitants
+Rt,Epidemiology,Effective reproduction number
+p_rt1,Epidemiology,Probability that Rt is greater than one
+nivel,Epidemiology,Dengue alert level
+nivel_inc,Epidemiology,Dengue incidence level category
+transmissao,Epidemiology,Dengue transmission indicator
+receptivo,Epidemiology,Dengue receptivity indicator
+notif_accum_year,Epidemiology,Cumulative dengue notifications in the current year
+tempmin,Climate,Minimum weekly air temperature
+tempmed,Climate,Mean weekly air temperature
+tempmax,Climate,Maximum weekly air temperature
+umidmin,Climate,Minimum weekly relative humidity
+umidmed,Climate,Mean weekly relative humidity
+umidmax,Climate,Maximum weekly relative humidity
+precip_total_semana,Climate,Total weekly precipitation
+precip_media_semana,Climate,Mean weekly precipitation
+precip_max_semana,Climate,Maximum weekly precipitation
+dias_lluvia_semana,Climate,Number of rainy days during the week
+nino34,ENSO,Niño 3.4 climate index
+soi,ENSO,Southern Oscillation Index
+NDVI_mean,MODIS,Mean Normalized Difference Vegetation Index
+NDVI_std,MODIS,Standard deviation of NDVI
+EVI_mean,MODIS,Mean Enhanced Vegetation Index
+EVI_std,MODIS,Standard deviation of EVI
+LST_Day_mean,MODIS,Mean daytime land surface temperature
+LST_Day_std,MODIS,Standard deviation of daytime land surface temperature
+LST_Night_mean,MODIS,Mean nighttime land surface temperature
+LST_Night_std,MODIS,Standard deviation of nighttime land surface temperature
+n_pixels,MODIS,Number of valid pixels used in satellite aggregation
+n_tiles,MODIS,Number of satellite tiles used in aggregation
+elev_min,Topography,Minimum elevation
+elev_mean,Topography,Mean elevation
+elev_max,Topography,Maximum elevation
+pct_tree_cover,LandCover,Percentage of tree cover
+pct_shrubland,LandCover,Percentage of shrubland
+pct_grassland,LandCover,Percentage of grassland
+pct_cropland,LandCover,Percentage of cropland
+pct_builtup,LandCover,Percentage of built-up area
+pct_water,LandCover,Percentage of water bodies
+pct_wetland,LandCover,Percentage of wetlands
+pct_bare_sparse,LandCover,Percentage of bare or sparse vegetation
+pct_mangroves,LandCover,Percentage of mangrove cover
+dominant_landcover,LandCover,Dominant land cover class
+pop,Demography,Population used for epidemiological calculations
+population_total,Demography,Total resident population
+population_density,Demography,Population density per square kilometer
+male_population_pct,Demography,Percentage of male population
+female_population_pct,Demography,Percentage of female population
+sex_ratio,Demography,Male-to-female population ratio
+median_age,Demography,Median population age
+aging_index,Demography,Population aging index
+area_km2,Demography/Geography,Municipality area in square kilometers
+water_supply_pct,Sanitation,Population with access to water supply services
+sewage_pct,Sanitation,Population with access to sewage services
+garbage_collection_pct,Sanitation,Population with access to garbage collection services
+casos_lag_1,Lag,Dengue cases lagged by 1 week
+casos_lag_2,Lag,Dengue cases lagged by 2 weeks
+casos_lag_4,Lag,Dengue cases lagged by 4 weeks
+casos_lag_8,Lag,Dengue cases lagged by 8 weeks
+Rt_lag_1,Lag,Effective reproduction number lagged by 1 week
+Rt_lag_2,Lag,Effective reproduction number lagged by 2 weeks
+Rt_lag_4,Lag,Effective reproduction number lagged by 4 weeks
+precip_total_semana_lag_1,Lag,Weekly precipitation lagged by 1 week
+precip_total_semana_lag_4,Lag,Weekly precipitation lagged by 4 weeks
+tempmed_lag_1,Lag,Mean temperature lagged by 1 week
+tempmed_lag_4,Lag,Mean temperature lagged by 4 weeks
+umidmed_lag_1,Lag,Mean humidity lagged by 1 week
+umidmed_lag_4,Lag,Mean humidity lagged by 4 weeks
+casos_roll4_mean,Rolling,Four-week rolling mean of dengue cases
+casos_roll8_mean,Rolling,Eight-week rolling mean of dengue cases
+precip_roll4_sum,Rolling,Four-week cumulative precipitation
+precip_roll8_sum,Rolling,Eight-week cumulative precipitation
+tempmed_roll4_mean,Rolling,Four-week rolling mean temperature
+tempmed_roll8_mean,Rolling,Eight-week rolling mean temperature
