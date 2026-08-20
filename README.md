@@ -8,13 +8,16 @@ DATASET_MULTIMODAL_V8 is a nationwide municipal-level multimodal dataset designe
 
 The dataset integrates epidemiological, meteorological, precipitation, remote sensing, climate teleconnection, topographic, land-cover, demographic and sanitation information into a unified weekly municipal database covering 2010–2025.
 
-## Availability
+### Availability
 
 The dataset is publicly available through:
 
-- GitHub repository
-- Zenodo archive (DOI pending)
+- GitHub repository:
+  https://github.com/jssanchez-garreta/dataset-multimodal-dengue-brazil
 
+- Zenodo archive:
+  https://doi.org/10.5281/zenodo.22027187
+  
 The current stable release is DATASET_MULTIMODAL_V8.
 
 ### Key Characteristics
