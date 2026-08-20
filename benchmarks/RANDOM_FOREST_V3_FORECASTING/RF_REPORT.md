@@ -1,0 +1,25 @@
+
+# RANDOM FOREST V3 FORECASTING
+
+Target:
+p_inc100k
+
+Features:
+68
+
+Mean Performance
+
+MAE:
+21.0300
+±
+14.8518
+
+RMSE:
+79.8034
+±
+50.7292
+
+R2:
+0.6447
+±
+0.0766
