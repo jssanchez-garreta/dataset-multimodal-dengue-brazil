@@ -446,20 +446,26 @@ v7 + lag variables + rolling-window features
 
 ---
 
-## Availability
+### Availability
 
-### GitHub Repository
+### Repository DOI
 
-https://github.com/jssanchez-garreta/dataset-multimodal-dengue-brazil
+https://doi.org/10.5281/zenodo.22027186
 
-### Zenodo Archive
+This DOI contains:
 
-Repository DOI: 10.5281/zenodo.22027186
+- Documentation
+- Scripts
+- Benchmark results
 
-Dataset DOI: 10.5281/zenodo.22029052
+### Dataset DOI
 
-URL: https://doi.org/10.5281/zenodo.22027186
+https://doi.org/10.5281/zenodo.22029052
 
+This DOI contains:
+
+- dataset_multimodal_v8.parquet
+- dataset_benchmark_v1.parquet
 
 ### Citation
 
