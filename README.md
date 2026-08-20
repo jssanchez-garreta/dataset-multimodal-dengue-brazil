@@ -16,7 +16,7 @@ The dataset is publicly available through:
   https://github.com/jssanchez-garreta/dataset-multimodal-dengue-brazil
 
 - Zenodo archive:
-  https://doi.org/10.5281/zenodo.22027187
+  https://doi.org/10.5281/zenodo.22027465
   
 The current stable release is DATASET_MULTIMODAL_V8.
 
