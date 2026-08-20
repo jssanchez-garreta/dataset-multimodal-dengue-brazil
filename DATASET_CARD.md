@@ -454,10 +454,10 @@ https://github.com/jssanchez-garreta/dataset-multimodal-dengue-brazil
 
 ### Zenodo Archive
 
-DOI: 10.5281/zenodo.XXXXXXXX
+DOI: 10.5281/zenodo.22027187
 
 URL:
-https://doi.org/10.5281/zenodo.XXXXXXXX
+https://doi.org/10.5281/zenodo.22027187
 
 ### Citation
 
