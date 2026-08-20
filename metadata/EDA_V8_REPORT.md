@@ -12,6 +12,8 @@
 
 ## Generated Figures
 
+Located in metadata/figures/
+
 - missing_values.png
 - dengue_timeseries_brazil.png
 - climate_distributions.png
