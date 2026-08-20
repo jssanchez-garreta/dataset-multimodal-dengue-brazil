@@ -467,6 +467,8 @@ This DOI contains:
 - dataset_multimodal_v8.parquet
 - dataset_benchmark_v1.parquet
 
+---
+
 ### Citation
 
 Please cite this dataset using the information provided in:
