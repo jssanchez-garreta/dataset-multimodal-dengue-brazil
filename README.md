@@ -10,15 +10,20 @@ The dataset integrates epidemiological, meteorological, precipitation, remote se
 
 ### Availability
 
-The dataset is publicly available through:
+### Source Code, Documentation and Benchmarks
 
-- GitHub repository:
-  https://github.com/jssanchez-garreta/dataset-multimodal-dengue-brazil
+GitHub repository: https://github.com/jssanchez-garreta/dataset-multimodal-dengue-brazil
 
-- Zenodo archive:
-  https://doi.org/10.5281/zenodo.22027186
-  
-The current stable release is DATASET_MULTIMODAL_V8.
+DOI: https://doi.org/10.5281/zenodo.22027186
+
+### Datasets
+
+DATASET_MULTIMODAL_V8: https://doi.org/10.5281/zenodo.22029052
+
+Included files:
+
+- dataset_multimodal_v8.parquet
+- dataset_benchmark_v1.parquet
 
 ### Key Characteristics
 
