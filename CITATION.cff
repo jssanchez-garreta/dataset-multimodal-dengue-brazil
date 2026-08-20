@@ -2,7 +2,7 @@ cff-version: 1.2.0
 
 type: dataset
 
-doi: 10.5281/zenodo.22027187
+doi: 10.5281/zenodo.22027465
 
 repository-code: https://github.com/jssanchez-garreta/dataset-multimodal-dengue-brazil
 
@@ -44,7 +44,7 @@ abstract: >
   precipitation, remote sensing, ENSO, topographic,
   land-cover, demographic and sanitation information.
 
-repository-code: https://github.com/<YOUR_REPOSITORY>
+repository-code: https://github.com/jssanchez-garreta/dataset-multimodal-dengue-brazil
 
 version: v8
 
