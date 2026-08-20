@@ -1,0 +1,7 @@
+Model_1,Model_2,Statistic,p_value
+LightGBM,XGBoost,0.0,0.0625
+LightGBM,CatBoost,4.0,0.4375
+LightGBM,RandomForest,0.0,0.0625
+XGBoost,CatBoost,1.0,0.125
+XGBoost,RandomForest,0.0,0.0625
+CatBoost,RandomForest,0.0,0.0625
