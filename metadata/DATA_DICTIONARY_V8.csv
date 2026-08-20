@@ -30,7 +30,7 @@ precip_total_semana,Climate,Total weekly precipitation
 precip_media_semana,Climate,Mean weekly precipitation
 precip_max_semana,Climate,Maximum weekly precipitation
 dias_lluvia_semana,Climate,Number of rainy days during the week
-nino34,ENSO,Niño 3.4 climate index
+nino34,ENSO,NiÃ±o 3.4 climate index
 soi,ENSO,Southern Oscillation Index
 NDVI_mean,MODIS,Mean Normalized Difference Vegetation Index
 NDVI_std,MODIS,Standard deviation of NDVI
