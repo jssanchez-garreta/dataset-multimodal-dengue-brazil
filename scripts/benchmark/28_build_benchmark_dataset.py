@@ -84,6 +84,49 @@ df = pd.read_parquet(
 print(df.shape)
 
 # ==================================================
+# INPUT PANEL AUDIT
+# ==================================================
+
+print("\n===================================")
+print("INPUT PANEL AUDIT")
+print("===================================")
+
+input_dup_keys = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .gt(1)
+    .sum()
+)
+
+input_max_rep = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .max()
+)
+
+print(
+    f"Duplicated municipality-week keys: "
+    f"{input_dup_keys}"
+)
+
+print(
+    f"Maximum repetitions per key: "
+    f"{input_max_rep}"
+)
+
+if input_dup_keys > 0:
+    raise ValueError(
+        "Input dataset contains duplicated "
+        "municipality-week keys."
+    )
+
+print(
+    "OK: municipality-week key uniqueness validated."
+)
+
+# ==================================================
 # TEMPORAL STRATIFIED SAMPLING
 # ==================================================
 
@@ -143,6 +186,71 @@ benchmark_df = benchmark_df.sort_values(
         "semana",
         "codigo_ibge"
     ]
+)
+
+# ==================================================
+# BENCHMARK PANEL AUDIT
+# ==================================================
+
+print("\n===================================")
+print("BENCHMARK PANEL AUDIT")
+print("===================================")
+
+benchmark_dup_keys = (
+    benchmark_df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .gt(1)
+    .sum()
+)
+
+benchmark_max_rep = (
+    benchmark_df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .max()
+)
+
+print(
+    f"Duplicated municipality-week keys: "
+    f"{benchmark_dup_keys}"
+)
+
+print(
+    f"Maximum repetitions per key: "
+    f"{benchmark_max_rep}"
+)
+
+if benchmark_dup_keys > 0:
+
+    print(
+        "\nExample duplicated keys:"
+    )
+
+    dup_keys = (
+        benchmark_df
+        .groupby(
+            ["codigo_ibge", "SE"]
+        )
+        .size()
+        .reset_index(name="n")
+    )
+
+    dup_keys = dup_keys[
+        dup_keys["n"] > 1
+    ]
+
+    print(
+        dup_keys.head(20)
+    )
+
+    raise ValueError(
+        "Benchmark dataset contains duplicated "
+        "municipality-week keys."
+    )
+
+print(
+    "OK: municipality-week key uniqueness validated."
 )
 
 # ==================================================
@@ -214,6 +322,12 @@ States:
 
 Duplicate rows:
 {duplicates}
+
+Duplicated municipality-week keys:
+{benchmark_dup_keys}
+
+Maximum municipality-week repetitions:
+{benchmark_max_rep}
 
 Temporal coverage:
 {benchmark_df['anio'].min()}-{benchmark_df['anio'].max()}
