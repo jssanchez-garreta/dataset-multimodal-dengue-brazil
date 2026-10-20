@@ -1,7 +1,7 @@
 # AUDIT_V8
 Generated automatically from dataset_multimodal_v8.parquet.
 ## General Summary
-- Records: 4,701,298
+- Records: 4,634,540
 - Variables: 87
 - Municipalities: 5,570
 - States: 27
@@ -19,26 +19,13 @@ Generated automatically from dataset_multimodal_v8.parquet.
 ## Top Missing Values
 | Variable | Missing | Missing % |
 |----------|---------|-----------|
-| sewage_pct | 2,403,751 | 51.13% |
-| garbage_collection_pct | 607,555 | 12.92% |
-| LST_Night_mean | 432,859 | 9.21% |
-| LST_Night_std | 432,859 | 9.21% |
-| umidmed_lag_4 | 426,187 | 9.07% |
-| tempmed_lag_4 | 424,600 | 9.03% |
-| water_supply_pct | 411,746 | 8.76% |
-| umidmed_lag_1 | 409,486 | 8.71% |
-| tempmed_lag_1 | 407,899 | 8.68% |
-| umidmed | 403,919 | 8.59% |
-| tempmax | 402,332 | 8.56% |
-| tempmed | 402,332 | 8.56% |
-| umidmin | 388,591 | 8.27% |
-| tempmed_roll4_mean | 335,540 | 7.14% |
-| umidmax | 334,781 | 7.12% |
-| tempmed_roll8_mean | 292,955 | 6.23% |
-| LST_Day_std | 214,549 | 4.56% |
-| LST_Day_mean | 214,549 | 4.56% |
-| tempmin | 205,551 | 4.37% |
-| EVI_mean | 122,504 | 2.61% |
+| sewage_pct | 2,369,620 | 51.13% |
+| garbage_collection_pct | 598,927 | 12.92% |
+| LST_Night_mean | 427,827 | 9.23% |
+| LST_Night_std | 427,827 | 9.23% |
+| umidmed_lag_4 | 419,301 | 9.05% |
+| tempmed_lag_4 | 417,714  | 9.01% |
+| water_supply_pct | 405,901 | 8.76% |
 
 ## Lag Variables
 - Rt_lag_1
