@@ -157,6 +157,8 @@ exclude_cols = [
 
     "data_iniSE",
     "SE",
+    "anio",
+    "semana",
 
     # target
 
