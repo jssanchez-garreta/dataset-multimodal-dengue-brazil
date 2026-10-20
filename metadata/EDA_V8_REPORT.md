@@ -3,7 +3,7 @@
 
 ## Dataset Summary
 
-- Records: 4,701,298
+- Records: 4,634,540
 - Variables: 87
 - Municipalities: 5,570
 - States: 27
@@ -11,8 +11,6 @@
 - Duplicate Rows: 0
 
 ## Generated Figures
-
-Located in metadata/figures/
 
 - missing_values.png
 - dengue_timeseries_brazil.png
