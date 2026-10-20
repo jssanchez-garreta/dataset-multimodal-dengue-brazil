@@ -170,6 +170,9 @@ iso = (
 )
 
 precip["anio"] = iso.year.astype(int)
+precip = precip[
+    precip["anio"] == ANIO
+].copy()
 precip["semana"] = iso.week.astype(int)
 
 precip["SE"] = (

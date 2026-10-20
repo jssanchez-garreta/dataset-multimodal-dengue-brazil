@@ -112,6 +112,45 @@ print(
     f"{df['codigo_ibge'].nunique():,}"
 )
 
+# ============================================================
+# AUDITORÍA PANEL DE ENTRADA
+# ============================================================
+
+print("\n===================================")
+print("AUDITORÍA PANEL DE ENTRADA")
+print("===================================")
+
+duplicados_panel = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .gt(1)
+    .sum()
+)
+
+max_rep_panel = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .max()
+)
+
+print(
+    f"Duplicated municipality-week keys: "
+    f"{duplicados_panel}"
+)
+
+print(
+    f"Maximum repetitions per key: "
+    f"{max_rep_panel}"
+)
+
+if duplicados_panel > 0:
+    raise ValueError(
+        "Duplicated municipality-week keys detected "
+        "before merge."
+    )
+
 # ==================================================
 # LEER SANEAMIENTO
 # ==================================================
@@ -167,6 +206,16 @@ print(
     f"{duplicados}"
 )
 
+if duplicados > 0:
+    raise ValueError(
+        f"Sanitation table contains "
+        f"{duplicados} duplicated municipality IDs."
+    )
+
+print(
+    "OK: municipality key uniqueness validated."
+)
+
 # ==================================================
 # MERGE
 # ==================================================
@@ -180,6 +229,43 @@ df = df.merge(
     on="codigo_ibge",
     how="left"
 )
+
+# ============================================================
+# AUDITORÍA PANEL POST-MERGE
+# ============================================================
+
+print("\nMunicipality-week uniqueness audit...")
+
+duplicados_postmerge = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .gt(1)
+    .sum()
+)
+
+max_rep_postmerge = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .max()
+)
+
+print(
+    f"Duplicated municipality-week keys: "
+    f"{duplicados_postmerge}"
+)
+
+print(
+    f"Maximum repetitions per key: "
+    f"{max_rep_postmerge}"
+)
+
+if duplicados_postmerge > 0:
+    raise ValueError(
+        "Merge introduced duplicated "
+        "municipality-week keys."
+    )
 
 # ==================================================
 # VALIDACIÓN POST-MERGE

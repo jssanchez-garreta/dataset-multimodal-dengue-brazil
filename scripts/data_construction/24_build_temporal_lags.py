@@ -83,6 +83,103 @@ print(
     f"Shape original: {df.shape}"
 )
 
+# ============================================================
+# AUDITORÍA PANEL DE ENTRADA
+# ============================================================
+
+print("\n===================================")
+print("INPUT PANEL AUDIT")
+print("===================================")
+
+duplicados_panel = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .gt(1)
+    .sum()
+)
+
+max_rep_panel = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .max()
+)
+
+print(
+    f"Duplicated municipality-week keys: "
+    f"{duplicados_panel}"
+)
+
+print(
+    f"Maximum repetitions per key: "
+    f"{max_rep_panel}"
+)
+
+if duplicados_panel > 0:
+    raise ValueError(
+        "Duplicated municipality-week keys detected "
+        "before temporal feature generation."
+    )
+
+# ============================================================
+# AUDITORÍA CONTINUIDAD TEMPORAL
+# ============================================================
+
+print("\n===================================")
+print("TEMPORAL CONTINUITY AUDIT")
+print("===================================")
+
+df["data_iniSE"] = pd.to_datetime(
+    df["data_iniSE"]
+)
+
+municipios_con_saltos = 0
+saltos_totales = 0
+
+for codigo_ibge, grupo in df.groupby("codigo_ibge"):
+
+    grupo = grupo.sort_values("data_iniSE")
+
+    diff_days = (
+        grupo["data_iniSE"]
+        .diff()
+        .dt.days
+        .dropna()
+    )
+
+    saltos = (
+        diff_days != 7
+    ).sum()
+
+    if saltos > 0:
+
+        municipios_con_saltos += 1
+        saltos_totales += saltos
+
+print(
+    f"Municipalities with temporal gaps: "
+    f"{municipios_con_saltos}"
+)
+
+print(
+    f"Total temporal gaps: "
+    f"{saltos_totales}"
+)
+
+if municipios_con_saltos > 0:
+
+    print(
+        f"WARNING: {municipios_con_saltos} municipalities "
+        f"contain temporal gaps."
+    )
+
+if municipios_con_saltos == 0:
+
+    print(
+        "OK: temporal continuity validated."
+    )
+    
 # ==================================================
 # SORT TEMPORAL
 # ==================================================
@@ -94,10 +191,11 @@ print("===================================")
 df = df.sort_values(
     [
         "codigo_ibge",
-        "anio",
-        "semana"
+        "data_iniSE"
     ]
 )
+
+df = df.reset_index(drop=True)
 
 # ==================================================
 # CREAR LAGS
@@ -342,6 +440,56 @@ print(
     f"\nShape final: "
     f"{df.shape}"
 )
+
+print("\n===================================")
+print("LAG AUDIT")
+print("===================================")
+
+for col in temporal_features:
+
+    print(
+        f"{col}: "
+        f"{df[col].isna().sum():,} missing"
+    )
+
+# ============================================================
+# AUDITORÍA PANEL FINAL
+# ============================================================
+
+print("\n===================================")
+print("OUTPUT PANEL AUDIT")
+print("===================================")
+
+duplicados_panel = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .gt(1)
+    .sum()
+)
+
+max_rep_panel = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .max()
+)
+
+print(
+    f"Duplicated municipality-week keys: "
+    f"{duplicados_panel}"
+)
+
+print(
+    f"Maximum repetitions per key: "
+    f"{max_rep_panel}"
+)
+
+if duplicados_panel > 0:
+    raise ValueError(
+        "Temporal feature generation introduced "
+        "duplicated municipality-week keys."
+    )
 
 # ==================================================
 # EXPORT

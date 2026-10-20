@@ -19,7 +19,7 @@ import time
 # ------------------------------------------------------------
 
 INPUT_EPIDEMIOLOGIA = (
-    "/content/drive/MyDrive/DENGUE_BRASIL/"
+    "/content/drive/MyDrive/DENGUE_BRASIL/EPIDEMIOLOGY/"
     "epidemiologia_infodengue_2010_2025_clean.parquet"
 )
 

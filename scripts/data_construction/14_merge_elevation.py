@@ -125,6 +125,38 @@ print(
     f"{len(elevation):,}"
 )
 
+# ============================================================
+# VALIDACIÓN PREVIA DEL DATASET DE ENTRADA
+# ============================================================
+
+print("\n===================================")
+print("VALIDANDO DATASET MULTIMODAL V2")
+print("===================================")
+
+dup_input = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .gt(1)
+    .sum()
+)
+
+print(
+    f"Duplicated municipality-week keys: "
+    f"{dup_input}"
+)
+
+if dup_input > 0:
+
+    raise ValueError(
+        f"Input dataset contains "
+        f"{dup_input} duplicated municipality-week keys."
+    )
+
+print(
+    "OK: municipality-week key uniqueness validated."
+)
+
 # ==================================================
 # TIPOS
 # ==================================================
@@ -209,6 +241,47 @@ dataset_multimodal_v3 = (
 print(
     f"Filas tras merge: "
     f"{len(dataset_multimodal_v3):,}"
+)
+
+# ============================================================
+# VALIDACIÓN DE UNICIDAD MUNICIPIO-SEMANA
+# ============================================================
+
+print("\nMunicipality-week uniqueness audit...")
+
+dup = (
+    dataset_multimodal_v3
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .gt(1)
+    .sum()
+)
+
+max_rep = (
+    dataset_multimodal_v3
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .max()
+)
+
+print(
+    f"Duplicated municipality-week keys: "
+    f"{dup}"
+)
+
+print(
+    f"Maximum repetitions per key: "
+    f"{max_rep}"
+)
+
+if dup > 0:
+
+    raise ValueError(
+        f"ERROR: {dup} duplicated municipality-week keys detected."
+    )
+
+print(
+    "OK: municipality-week key uniqueness validated."
 )
 
 # ==================================================

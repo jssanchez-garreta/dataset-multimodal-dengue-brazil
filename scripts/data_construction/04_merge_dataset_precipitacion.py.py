@@ -51,6 +51,11 @@ OUTPUT_VALIDACION = os.path.join(
     "validacion_chirps_global.csv"
 )
 
+OUTPUT_VALIDACION_CLAVES = os.path.join(
+    BASE_FOLDER,
+    "validacion_claves_municipio_semana.csv"
+)
+
 # ------------------------------------------------------------
 # VALIDACIÓN ANUAL
 # ------------------------------------------------------------
@@ -128,6 +133,14 @@ for anio in ANIOS:
 
     df = pd.read_parquet(fichero)
 
+    # --------------------------------------------------------
+    # ELIMINAR SEMANAS ISO QUE PERTENECEN A OTRO AÑO
+    # --------------------------------------------------------
+
+    df = df[
+        df["SE"].str[:4].astype(int) == anio
+    ].copy()
+
     datasets.append(df)
 
 # ------------------------------------------------------------
@@ -152,7 +165,6 @@ dataset_final.sort_values(
     ],
     inplace=True
 )
-
 # ------------------------------------------------------------
 # VALIDACIÓN GLOBAL
 # ------------------------------------------------------------
@@ -182,6 +194,54 @@ print(
     .isnull()
     .sum()
 )
+
+# ------------------------------------------------------------
+# AUDITORÍA FINAL DEL BENCHMARK
+# ------------------------------------------------------------
+
+print("\nMunicipality-week uniqueness audit...")
+
+duplicados = dataset_final.duplicated(
+    subset=["codigo_ibge", "anio", "semana"]
+).sum()
+
+max_rep = (
+    dataset_final
+    .groupby(["codigo_ibge", "anio", "semana"])
+    .size()
+    .max()
+)
+
+print(f"Duplicated municipality-week keys: {duplicados}")
+print(f"Maximum repetitions per key: {max_rep}")
+
+# Resumen auditoría
+validacion_clave = pd.DataFrame({
+    "metric": [
+        "total_rows",
+        "unique_municipalities",
+        "duplicated_municipality_week_keys",
+        "maximum_key_repetitions"
+    ],
+    "value": [
+        len(dataset_final),
+        dataset_final["codigo_ibge"].nunique(),
+        duplicados,
+        max_rep
+    ]
+})
+
+validacion_clave.to_csv(
+    OUTPUT_VALIDACION_CLAVES,
+    index=False
+)
+
+if duplicados > 0:
+    raise ValueError(
+        f"ERROR: Se detectaron {duplicados} claves municipio-semana duplicadas."
+    )
+
+print("OK: municipality-week key uniqueness validated.")
 
 # ------------------------------------------------------------
 # GUARDAR VALIDACIÓN

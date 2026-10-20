@@ -123,6 +123,38 @@ print(
     f"{df['codigo_ibge'].nunique():,}"
 )
 
+# ============================================================
+# VALIDACIÓN PREVIA DEL DATASET DE ENTRADA
+# ============================================================
+
+print("\n===================================")
+print("VALIDANDO DATASET MULTIMODAL V3")
+print("===================================")
+
+dup_input = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .gt(1)
+    .sum()
+)
+
+print(
+    f"Duplicated municipality-week keys: "
+    f"{dup_input}"
+)
+
+if dup_input > 0:
+
+    raise ValueError(
+        f"Input dataset contains "
+        f"{dup_input} duplicated municipality-week keys."
+    )
+
+print(
+    "OK: municipality-week key uniqueness validated."
+)
+
 # ==================================================
 # CARGAR LAND COVER
 # ==================================================
@@ -196,6 +228,17 @@ print(
     f"{duplicados}"
 )
 
+if duplicados > 0:
+
+    raise ValueError(
+        f"Land Cover contains "
+        f"{duplicados} duplicated municipality keys."
+    )
+
+print(
+    "OK: municipality key uniqueness validated."
+)
+
 # ==================================================
 # MERGE
 # ==================================================
@@ -208,6 +251,47 @@ df = df.merge(
     landcover,
     on="codigo_ibge",
     how="left"
+)
+
+# ============================================================
+# VALIDACIÓN DE UNICIDAD MUNICIPIO-SEMANA
+# ============================================================
+
+print("\nMunicipality-week uniqueness audit...")
+
+dup = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .gt(1)
+    .sum()
+)
+
+max_rep = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .max()
+)
+
+print(
+    f"Duplicated municipality-week keys: "
+    f"{dup}"
+)
+
+print(
+    f"Maximum repetitions per key: "
+    f"{max_rep}"
+)
+
+if dup > 0:
+
+    raise ValueError(
+        f"ERROR: {dup} duplicated municipality-week keys detected."
+    )
+
+print(
+    "OK: municipality-week key uniqueness validated."
 )
 
 # ==================================================

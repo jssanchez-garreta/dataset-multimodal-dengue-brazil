@@ -155,6 +155,29 @@ print(
     f"{master['codigo_ibge'].nunique():,}"
 )
 
+# ============================================================
+# VALIDACIÓN PREVIA DEL MASTER
+# ============================================================
+
+print("\nValidating master dataset...")
+
+dup_master = (
+    master
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .gt(1)
+    .sum()
+)
+
+print(f"Duplicated keys in master: {dup_master}")
+
+if dup_master > 0:
+    raise ValueError(
+        f"Master dataset contains {dup_master} duplicated municipality-week keys."
+    )
+
+print("OK: master municipality-week key uniqueness validated.")
+
 # ==================================================
 # PREPARACIÓN MODIS
 # ==================================================
@@ -228,6 +251,37 @@ print(
     f"Filas tras merge: "
     f"{len(dataset_multimodal):,}"
 )
+
+# ============================================================
+# VALIDACIÓN DE UNICIDAD MUNICIPIO-SEMANA
+# ============================================================
+
+print("\nMunicipality-week uniqueness audit...")
+
+dup = (
+    dataset_multimodal
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .gt(1)
+    .sum()
+)
+
+max_rep = (
+    dataset_multimodal
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .max()
+)
+
+print(f"Duplicated municipality-week keys: {dup}")
+print(f"Maximum repetitions per key: {max_rep}")
+
+if dup > 0:
+    raise ValueError(
+        f"ERROR: {dup} duplicated municipality-week keys detected."
+    )
+
+print("OK: municipality-week key uniqueness validated.")
 
 # ==================================================
 # LIMPIEZA

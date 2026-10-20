@@ -115,6 +115,45 @@ print(
 )
 
 # ==================================================
+# AUDITORÍA PANEL DE ENTRADA
+# ==================================================
+
+print("\n===================================")
+print("AUDITORÍA PANEL DE ENTRADA")
+print("===================================")
+
+duplicados_panel = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .gt(1)
+    .sum()
+)
+
+max_rep_panel = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .max()
+)
+
+print(
+    f"Duplicated municipality-week keys: "
+    f"{duplicados_panel}"
+)
+
+print(
+    f"Maximum repetitions per key: "
+    f"{max_rep_panel}"
+)
+
+if duplicados_panel > 0:
+    raise ValueError(
+        "Duplicated municipality-week keys detected "
+        "before merge."
+    )
+
+# ==================================================
 # CARGAR DEMOGRAPHICS
 # ==================================================
 
@@ -177,6 +216,12 @@ print(
     f"{duplicados}"
 )
 
+if duplicados > 0:
+    raise ValueError(
+        f"Demographics table contains "
+        f"{duplicados} duplicated municipality IDs."
+    )
+
 # ==================================================
 # MERGE
 # ==================================================
@@ -208,6 +253,37 @@ print(
     f"Municipios únicos: "
     f"{df['codigo_ibge'].nunique():,}"
 )
+
+duplicados_postmerge = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .gt(1)
+    .sum()
+)
+
+max_rep_postmerge = (
+    df
+    .groupby(["codigo_ibge", "SE"])
+    .size()
+    .max()
+)
+
+print(
+    f"Duplicated municipality-week keys: "
+    f"{duplicados_postmerge}"
+)
+
+print(
+    f"Maximum repetitions per key: "
+    f"{max_rep_postmerge}"
+)
+
+if duplicados_postmerge > 0:
+    raise ValueError(
+        "Merge introduced duplicated "
+        "municipality-week keys."
+    )
 
 nulos_demographics = (
     df["population_total"]
@@ -255,6 +331,29 @@ print(
         validation_cols
     ]
     .describe()
+)
+
+validacion_panel = pd.DataFrame({
+    "metric": [
+        "rows",
+        "municipalities",
+        "duplicated_municipality_week_keys",
+        "maximum_key_repetitions"
+    ],
+    "value": [
+        len(df),
+        df["codigo_ibge"].nunique(),
+        duplicados_postmerge,
+        max_rep_postmerge
+    ]
+})
+
+validacion_panel.to_csv(
+    os.path.join(
+        DATASETS_DIR,
+        "dataset_multimodal_v5_panel_audit.csv"
+    ),
+    index=False
 )
 
 # ==================================================
