@@ -29,7 +29,7 @@ Included files:
 
 | Property | Value |
 |-----------|---------|
-| Records | 4,701,298 |
+| Records | 4,634,540 |
 | Variables | 87 |
 | Municipalities | 5,570 |
 | States | 27 |
@@ -63,10 +63,10 @@ Included files:
 
 | Model | R² |
 |---------|---------:|
-| LightGBM | 0.7843 |
-| CatBoost | 0.7820 |
-| XGBoost | 0.7675 |
-| Random Forest | 0.6447 |
+| LightGBM | 0.8010 |
+| CatBoost | 0.7999 |
+| XGBoost | 0.7784 |
+| Random Forest | 0.6535 |
 
 ### Repository Structure
 
