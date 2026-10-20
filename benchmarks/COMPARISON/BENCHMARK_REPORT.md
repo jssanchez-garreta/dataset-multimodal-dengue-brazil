@@ -4,16 +4,16 @@
 ## Forecasting Ranking
 
        Model  MAE_Mean    MAE_SD  RMSE_Mean   RMSE_SD  R2_Mean    R2_SD  Rank
-    LightGBM 17.605912 10.650096  59.905905 31.663866 0.784342 0.044768     1
-    CatBoost 17.750890 10.712512  60.242034 32.071966 0.782020 0.048007     2
-     XGBoost 18.122181 11.659705  63.433657 36.297204 0.767532 0.036085     3
-RandomForest 21.029960 14.851787  79.803437 50.729208 0.644676 0.076555     4
+    LightGBM 16.489253 10.064913  57.311596 30.727665 0.800963 0.047870     1
+    CatBoost 16.629376 10.104170  57.528661 30.725602 0.799870 0.046748     2
+     XGBoost 17.066025 10.869317  61.296381 34.669864 0.778439 0.044638     3
+RandomForest 20.399808 14.514498  79.213970 51.691249 0.653533 0.079814     4
 
 ## Best Forecasting Model
 
 LightGBM
 
-R2 = 0.7843
+R2 = 0.8010
 
 ## Nowcasting vs Forecasting
 
@@ -23,21 +23,21 @@ R2 = 0.9869
 
 LightGBM Forecasting:
 
-R2 = 0.7843
+R2 = 0.8010
 
 Difference:
 
--0.2026
+-0.1860
 
 ## Friedman Test
 
 Statistic:
 
-12.8400
+13.5600
 
 p-value:
 
-0.004996
+0.003570
 
 ## Interpretation
 
