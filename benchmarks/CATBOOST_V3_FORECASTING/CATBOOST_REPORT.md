@@ -5,19 +5,19 @@ Target:
 p_inc100k
 
 Features:
-68
+66
 
 Mean Performance
 
 MAE:
-16.63
+16.6294
 ±
-10.10
+10.1042
 
 RMSE:
-57.53
+57.5287
 ±
-30.73
+30.7256
 
 R2:
 0.7999
