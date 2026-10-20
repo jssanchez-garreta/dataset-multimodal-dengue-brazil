@@ -27,7 +27,7 @@ The dataset integrates epidemiological, meteorological, precipitation, remote se
 | Country | Brazil |
 | Municipalities | 5,570 |
 | States | 27 |
-| Records | 4,701,298 |
+| Records | 4,634,540 |
 | Variables | 87 |
 | Temporal Coverage | 2010–2025 |
 | Temporal Resolution | Weekly |
@@ -321,8 +321,8 @@ Main sources of missing observations include:
 
 | Variable | Missing (%) |
 |-----------|------------:|
-| LST_Night_mean | 9.21 |
-| LST_Night_std | 9.21 |
+| LST_Night_mean | 9.23 |
+| LST_Night_std | 9.23 |
 | LST_Day_mean | 4.56 |
 | LST_Day_std | 4.56 |
 
@@ -348,21 +348,21 @@ LightGBM achieved:
 
 | Model | R² |
 |---------|---------:|
-| LightGBM | 0.7843 |
-| CatBoost | 0.7820 |
-| XGBoost | 0.7675 |
-| Random Forest | 0.6447 |
+| LightGBM | 0.8010 |
+| CatBoost | 0.7999 |
+| XGBoost | 0.7784 |
+| Random Forest | 0.9535 |
 
 ### Nowcasting vs Forecasting
 
 | Scenario | Model | R² |
 |-----------|-----------|----------:|
 | Nowcasting | LightGBM | 0.9869 |
-| Forecasting | LightGBM | 0.7843 |
+| Forecasting | LightGBM | 0.8010 |
 
 Difference:
 
-ΔR² = -0.2026
+ΔR² = -0.1860
 
 ### Statistical Comparison
 
