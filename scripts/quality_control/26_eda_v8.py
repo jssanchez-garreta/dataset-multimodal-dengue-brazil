@@ -1,18 +1,18 @@
 # ============================================================
 # 26_eda_v8.py
 #
-# PROYECTO:
+# PROJECT:
 # Early Detection of Dengue Outbreaks in Brazil
 #
-# OBJETIVO:
+# OBJECTIVE:
 #
 # Exploratory Data Analysis (EDA)
 #
-# ENTRADA:
+# INPUT:
 #
-# dataset_multimodal_v8.parquet
+# BraDengue-MM.parquet
 #
-# SALIDAS:
+# OUTPUTS:
 #
 # EDA_V8/
 #
@@ -69,7 +69,7 @@ DATASET_DIR = os.path.join(
 
 INPUT_FILE = os.path.join(
     DATASET_DIR,
-    "dataset_multimodal_v8.parquet"
+    "BraDengue-MM.parquet"
 )
 
 EDA_DIR = os.path.join(

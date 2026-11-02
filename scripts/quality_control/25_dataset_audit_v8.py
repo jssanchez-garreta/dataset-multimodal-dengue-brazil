@@ -1,19 +1,19 @@
 # ============================================================
 # 25_dataset_audit_v8.py
 #
-# PROYECTO:
+# PROJECT:
 # EARLY DETECTION OF DENGUE OUTBREAKS IN BRAZIL
 #
-# OBJETIVO:
+# OBJECTIVE:
 #
-# Auditoría completa de dataset_multimodal_v8
-# y generación automática de informe Markdown.
+# Complete audit of BraDengue-MM
+# and automatic generation of a report in Markdown format.
 #
-# ENTRADA:
+# INPUT:
 #
-# dataset_multimodal_v8.parquet
+# BraDengue-MM.parquet
 #
-# SALIDA:
+# OUTPUT:
 #
 # AUDIT_V8.md
 #
@@ -58,7 +58,7 @@ DATASET_DIR = os.path.join(
 
 INPUT_FILE = os.path.join(
     DATASET_DIR,
-    "dataset_multimodal_v8.parquet"
+    "BraDengue-MM.parquet"
 )
 
 OUTPUT_FILE = os.path.join(
