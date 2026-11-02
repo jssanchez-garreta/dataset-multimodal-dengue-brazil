@@ -23,5 +23,9 @@ Main scripts:
 - 30_benchmark_xgboost.py
 - 31_benchmark_catboost.py
 - 32_benchmark_random_forest.py
-- 33_compare_models.py
-- 34_benchmark_lightgbm_v4_landcover_ohe.py
+- 33_benchmark_deep_forest_simplified.py
+- 34_benchmark_ridge.py
+- 35_becnhmark_naive_persistence.py
+- 36_bnchmark_svr.py
+- 37_benchmark_mlp_layers.py
+- 40_compare_models.py
