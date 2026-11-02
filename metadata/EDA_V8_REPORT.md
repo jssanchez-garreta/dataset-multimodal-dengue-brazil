@@ -3,7 +3,7 @@
 
 ## Dataset Summary
 
-- Records: 4,634,540
+- Records: 4,701,298
 - Variables: 87
 - Municipalities: 5,570
 - States: 27

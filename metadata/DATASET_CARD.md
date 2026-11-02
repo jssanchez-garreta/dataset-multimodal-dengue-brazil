@@ -2,7 +2,7 @@
 
 ## Dataset Name
 
-DATASET_MULTIMODAL_V8
+BraDengue-MM
 
 ## Version
 
@@ -14,7 +14,7 @@ Stable baseline release.
 
 ## Dataset Summary
 
-DATASET_MULTIMODAL_V8 is a nationwide municipal-level multimodal dataset designed for dengue surveillance, nowcasting, forecasting, epidemiological analysis and machine learning benchmarking in Brazil.
+BraDengue-MM is a nationwide municipal-level multimodal dataset designed for dengue surveillance, nowcasting, forecasting, epidemiological analysis and machine learning benchmarking in Brazil.
 
 The dataset integrates epidemiological, meteorological, precipitation, remote sensing, climate teleconnection, topographic, land-cover, demographic and sanitation information into a unified weekly municipal database covering the period 2010–2025.
 
@@ -40,7 +40,7 @@ The dataset integrates epidemiological, meteorological, precipitation, remote se
 
 Dengue transmission is driven by complex interactions among epidemiological, climatic, environmental, demographic and infrastructural factors.
 
-DATASET_MULTIMODAL_V8 was developed to integrate these heterogeneous information sources into a single nationwide database suitable for:
+BraDengue-MM was developed to integrate these heterogeneous information sources into a single nationwide database suitable for:
 
 - Dengue surveillance
 - Outbreak prediction
@@ -259,7 +259,7 @@ The current release was generated through a sequence of data integration, featur
 
 The complete pipeline consists of 34 scripts executed sequentially.
 
-Benchmark experiments reported in this dataset card were conducted using temporal expanding-window validation and a benchmark subset derived from DATASET_MULTIMODAL_V8.
+Benchmark experiments reported in this dataset card were conducted using temporal expanding-window validation and a benchmark subset derived from BraDengue-MM.
 
 The repository includes all scripts required to reproduce both the dataset and the benchmark experiments.
 
@@ -321,8 +321,8 @@ Main sources of missing observations include:
 
 | Variable | Missing (%) |
 |-----------|------------:|
-| LST_Night_mean | 9.23 |
-| LST_Night_std | 9.23 |
+| LST_Night_mean | 9.21 |
+| LST_Night_std | 9.21 |
 | LST_Day_mean | 4.56 |
 | LST_Day_std | 4.56 |
 
@@ -340,18 +340,25 @@ Notes:
 
 LightGBM achieved:
 
-| Model | R² |
-|---------|---------:|
-| LightGBM | 0.9869 |
+| Model | MAE | RMSE | R² |
+|---------|:---:|:---:|---------:|
+| LightGBM | 1.96 ± 1.62 | 16.06 ± 13.06 | 0.9869 ± 0.0071 |
 
 ### Forecasting Scenario
 
-| Model | R² |
-|---------|---------:|
-| LightGBM | 0.8010 |
-| CatBoost | 0.7999 |
-| XGBoost | 0.7784 |
-| Random Forest | 0.9535 |
+Expanding-window temporal validation (2021–2025):
+
+| Model | MAE | RMSE | R² | Rank |
+|---------|:---:|:---:|:---:|---------:|
+| LightGBM | 16.49 ± 10.06 | 57.31 ± 30.73 | 0.8010 ± 0.0479 | 1 |
+| CatBoost | 16.63 ± 10.10 | 57.53 ± 30.73 | 0.7999 ± 0.0467 | 2 |
+| Naïve Persistence | 16.61 ± 10.24 | 56.80 ± 27.61 | 0.7974 ± 0.0529 | 3 |
+| XGBoost | 17.07 ± 10.87 | 61.30 ± 34.67 | 0.7784 ± 0.0446 | 4 |
+| Cascade Forest | 18.08 ± 11.41 | 65.71 ± 38.40 | 0.7482 ± 0.0555 | 5 |
+| 5-Layer MLP | 22.96 ± 10.94 | 74.70 ± 48.59 | 0.6831 ± 0.0848 | 6 |
+| Random Forest | 20.40 ± 14.51 | 79.21 ± 51.69 | 0.6535 ± 0.0798 | 7 |
+| Ridge Regression | 39.85 ± 25.49 | 132.98 ± 86.66 | 0.0483 ± 0.0852 | 8 |
+| LinearSVR | 39.85 ± 25.49 | 132.98 ± 86.66 | 0.0483 ± 0.0852 | 9 |
 
 ### Nowcasting vs Forecasting
 
@@ -362,13 +369,13 @@ LightGBM achieved:
 
 Difference:
 
-ΔR² = -0.1860
+ΔR² = 0.1860
 
 ### Statistical Comparison
 
 Friedman Test:
 
-- p-value = 0.004996
+- Test statistic Q = 38.19 (p = 7.0 × 10⁻⁶ < 0.0001)
 
 The forecasting benchmark identified statistically significant differences among the evaluated model families.
 
@@ -464,7 +471,7 @@ https://doi.org/10.5281/zenodo.22029052
 
 This DOI contains:
 
-- dataset_multimodal_v8.parquet
+- BraDengue-MM.parquet
 - dataset_benchmark_v1.parquet
 
 ---
