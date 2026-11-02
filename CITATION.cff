@@ -2,57 +2,52 @@ cff-version: 1.2.0
 
 type: dataset
 
-doi: 10.5281/zenodo.22027186
+doi: 10.5281/zenodo.22029052
 
-title: DATASET_MULTIMODAL_V8
+title: "BraDengue-MM: A Nationwide Multimodal Dataset and Benchmark for Dengue Forecasting in Brazil"
 
-message: >
-  If you use this dataset, please cite the dataset and
-  associated publication.
+message: "If you use this dataset, please cite it using the metadata from this file."
 
 authors:
   - family-names: Sánchez-Marqués
     given-names: Raquel
-    affiliation: MRC Unit The Gambia at LSHTM
+    affiliation: MRC Unit The Gambia at London School of Hygiene & Tropical Medicine
     orcid: 0000-0001-6123-022X
-
   - family-names: Sánchez
     given-names: J. Salvador
     affiliation: Universitat Jaume I
     orcid: 0000-0003-1053-4658
 
 keywords:
-  - dengue
-  - epidemiology
-  - forecasting
-  - nowcasting
-  - machine learning
+  - dengue forecasting
+  - multimodal dataset
+  - spatio-temporal modeling
+  - machine learning benchmark
+  - public health informatics
+  - nowcasting vs forecasting
   - Brazil
-  - remote sensing
-  - climate
-  - public health
 
 license: CC-BY-4.0
 
 abstract: >
-  DATASET_MULTIMODAL_V8 is a nationwide municipal-level
-  multimodal dataset for dengue surveillance, nowcasting
-  and forecasting in Brazil covering the period 2010–2025.
-  The dataset integrates epidemiological, meteorological,
-  precipitation, remote sensing, ENSO, topographic,
-  land-cover, demographic and sanitation information.
+  BraDengue-MM is a nationwide municipal-level multimodal dataset for dengue surveillance, 
+  nowcasting, and prospective forecasting in Brazil covering the period 2010–2025. 
+  The dataset integrates epidemiological, meteorological, precipitation, remote sensing, 
+  ENSO climate indices, topographic, land-cover, demographic, and sanitation information.
 
 repository-code: https://github.com/jssanchez-garreta/dataset-multimodal-dengue-brazil
 
 version: v8
 
-date-released: 2026
+date-released: 2026-10-18
 
 preferred-citation:
-  title: DATASET_MULTIMODAL_V8
+  type: article
+  title: "BraDengue-MM: A nationwide multimodal dataset and benchmark for machine-learning-based dengue forecasting in Brazil"
   authors:
     - family-names: Sánchez-Marqués
       given-names: Raquel
     - family-names: Sánchez
       given-names: J. Salvador
+  journal: "Journal of Biomedical Informatics"
   year: 2026
