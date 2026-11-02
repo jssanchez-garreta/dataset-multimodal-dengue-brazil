@@ -42,18 +42,6 @@ This repository contains the data processing pipeline, benchmark experiments, do
 │   ├── 38_benchmark_mlp_v2.py
 │   └── 40_compare_models.py
 │
-├── benchmarks/
-│   ├── LIGHTGBM/
-│   ├── XGBOOST/
-│   ├── CATBOOST/
-│   ├── RANDOM_FOREST/
-│   ├── DEEP_FOREST/
-│   ├── RIDGE/
-│   ├── NAIVE_PERSISTENCE/
-│   ├── SVR/
-│   ├── MLP/
-│   └── COMPARISON/
-│
 ├── README.md
 ├── LICENSE
 ├── CITATION.cff
@@ -146,19 +134,6 @@ Scripts are numbered according to execution order.
 - `36_benchmark_svr.py`: Support Vector Regression (LinearSVR) baseline.
 - `37_benchmark_mlp_layers.py` & `38_benchmark_mlp_v2.py`: Multi-Layer Perceptron (Deep Feedforward NN) architecture evaluation.
 - `40_compare_models.py`: Statistical aggregation and comparison across all model benchmarks.
-
----
-
-## benchmarks/
-
-Machine learning benchmark experiments outputs and metrics across 5 predictive paradigms:
-
-- **Tree Ensembles & Gradient Boosting:** LightGBM, CatBoost, XGBoost, Random Forest
-- **Deep Decision Cascades:** Cascade Forest
-- **Deep Neural Networks:** 5-Layer MLP
-- **Regularized Linear & SVM:** Ridge Regression, LinearSVR
-- **Naïve Baseline:** Persistence Model
-- **Model Comparison:** Summary statistical evaluations and plots
 
 ---
 
