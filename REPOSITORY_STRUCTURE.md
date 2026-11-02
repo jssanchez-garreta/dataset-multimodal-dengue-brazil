@@ -7,11 +7,14 @@ This repository contains the data processing pipeline, benchmark experiments, do
 ---
 
 # Directory Tree
+
+```text
 .
 ├── data/
 │   ├── raw/
 │   ├── intermediate/
 │   └── processed/
+│       └── BraDengue-MM.parquet
 │
 ├── metadata/
 │   ├── DATASET_CARD.md
@@ -24,16 +27,19 @@ This repository contains the data processing pipeline, benchmark experiments, do
 │   ├── 00_build_municipality_master.py
 │   ├── ...
 │   ├── 26_eda_v8.py
+│   ├── 27_generate_paper_tables.py
 │   ├── 28_build_benchmark_dataset.py
 │   ├── 29_benchmark_lightgbm.py
 │   ├── 30_benchmark_xgboost.py
 │   ├── 31_benchmark_catboost.py
 │   ├── 32_benchmark_random_forest.py
+│   ├── 33_benchmark_deep_forest.py
 │   ├── 33_benchmark_deep_forest_simplified.py
 │   ├── 34_benchmark_ridge.py
 │   ├── 35_benchmark_naive_persistence.py
 │   ├── 36_benchmark_svr.py
 │   ├── 37_benchmark_mlp_layers.py
+│   ├── 38_benchmark_mlp_v2.py
 │   └── 40_compare_models.py
 │
 ├── benchmarks/
@@ -53,7 +59,7 @@ This repository contains the data processing pipeline, benchmark experiments, do
 ├── CITATION.cff
 ├── REPOSITORY_STRUCTURE.md
 └── CHANGELOG.md
-
+```
 
 ---
 
