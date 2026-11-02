@@ -1,15 +1,15 @@
 # ============================================================
 # 28_build_benchmark_dataset.py
 #
-# PROYECTO:
+# PROJECT:
 # Early Detection of Dengue Outbreaks in Brazil
 #
-# OBJETIVO:
+# OBJECTIVE:
 #
-# Crear un dataset específico para benchmarking
-# a partir de DATASET_MULTIMODAL_V8.
+# Create a specific dataset for benchmarking
+# based on BraDengue-MM.parquet
 #
-# SALIDA:
+# OUTPUTS:
 #
 # dataset_benchmark_v1.parquet
 # benchmark_dataset_report.md
@@ -46,7 +46,7 @@ PROJECT_DIR = (
 INPUT_FILE = os.path.join(
     PROJECT_DIR,
     "DATASETS_MASTER_MULTIMODAL",
-    "dataset_multimodal_v8.parquet"
+    "BraDengue-MM.parquet"
 )
 
 BENCHMARK_DIR = os.path.join(
