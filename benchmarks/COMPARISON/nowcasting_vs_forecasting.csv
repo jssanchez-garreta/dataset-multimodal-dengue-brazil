@@ -1,3 +1,0 @@
-Scenario,Model,R2,Delta_vs_Nowcasting
-Nowcasting,LightGBM,0.9869357030836415,0.0
-Forecasting,LightGBM,0.8009632562995861,-0.18597244678405545
