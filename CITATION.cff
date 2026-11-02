@@ -45,9 +45,9 @@ preferred-citation:
   type: article
   title: "BraDengue-MM: A nationwide multimodal dataset and benchmark for machine-learning-based dengue forecasting in Brazil"
   authors:
-    - family-names: Sánchez-Marqués
-      given-names: Raquel
     - family-names: Sánchez
       given-names: J. Salvador
+    - family-names: Sánchez-Marqués
+      given-names: Raquel
   journal: "Journal of Biomedical Informatics"
   year: 2026
