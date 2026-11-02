@@ -1,24 +1,24 @@
 # ============================================================
 # 24_build_temporal_lags.py
 #
-# PROYECTO:
+# PROJECT:
 # EARLY DETECTION OF DENGUE OUTBREAKS IN BRAZIL
 #
-# OBJETIVO:
+# OBJECTIVE:
 #
-# Crear variables temporales derivadas:
+# Create derived temporary variables:
 #
 # - Lags epidemiológicos
 # - Lags climáticos
 # - Ventanas móviles
 #
-# ENTRADA:
+# INPUT:
 #
 # dataset_multimodal_v7.parquet
 #
-# SALIDA:
+# OUTPUT:
 #
-# dataset_multimodal_v8.parquet
+# BraDengue-MM.parquet
 #
 # ============================================================
 
@@ -66,7 +66,7 @@ INPUT_FILE = os.path.join(
 
 OUTPUT_FILE = os.path.join(
     DATASET_DIR,
-    "dataset_multimodal_v8.parquet"
+    "BraDengue-MM.parquet"
 )
 
 # ==================================================
