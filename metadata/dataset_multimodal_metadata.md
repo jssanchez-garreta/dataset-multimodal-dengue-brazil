@@ -1,8 +1,8 @@
-# DATASET_MULTIMODAL_V8
+# BraDengue-MM Metadata
 
 ## Overview
 
-DATASET_MULTIMODAL_V8 is a municipal-level multimodal dataset designed for dengue surveillance, epidemiological analysis, outbreak prediction and machine learning applications in Brazil.
+BraDengue-MM is a municipal-level multimodal dataset designed for dengue surveillance, epidemiological analysis, outbreak prediction and machine learning applications in Brazil.
 
 The dataset integrates epidemiological, meteorological, precipitation, remote sensing, climate teleconnection, topographic, land-cover, demographic and sanitation information into a unified weekly municipal database covering the period 2010–2025.
 
@@ -20,7 +20,7 @@ Current status:
 
 | Property | Value |
 |-----------|---------|
-| Records | 4,701,298 |
+| Records | 4,634,540 |
 | Variables | 87 |
 | Municipalities | 5,570 |
 | States | 27 |
@@ -34,7 +34,7 @@ Current status:
 
 ## Executive Summary
 
-DATASET_MULTIMODAL_V8 integrates:
+BraDengue-MM integrates:
 
 - Epidemiological data from InfoDengue
 - Local meteorology
@@ -49,7 +49,7 @@ DATASET_MULTIMODAL_V8 integrates:
 - Sanitation
 - Temporal lag variables and rolling windows
 
-The final dataset contains 4,701,298 weekly observations covering all 5,570 Brazilian municipalities during the period 2010-2025.
+The final dataset contains 4,634,540 weekly observations covering all 5,570 Brazilian municipalities during the period 2010-2025.
 
 ---
 
@@ -70,7 +70,7 @@ The final dataset contains 4,701,298 weekly observations covering all 5,570 Braz
 
 Dengue transmission is driven by complex interactions between epidemiological, climatic, environmental, demographic and infrastructural factors.
 
-DATASET_MULTIMODAL_V8 was designed to integrate these heterogeneous information sources into a unified nationwide database suitable for epidemiological studies, machine learning modeling, explainable artificial intelligence and outbreak prediction.
+BraDengue-MM was designed to integrate these heterogeneous information sources into a unified nationwide database suitable for epidemiological studies, machine learning modeling, explainable artificial intelligence and outbreak prediction.
 
 The dataset aims to facilitate the development, benchmarking and interpretation of predictive models operating at municipal scale across Brazil.
 
@@ -736,11 +736,11 @@ Main variables with missing observations:
 
 | Variable | Missing Records |
 |-----------|----------------|
-| sewage_pct | 2,403,752 |
-| garbage_collection_pct | 607,555 |
-| LST_Night_mean | 432,859 |
-| LST_Night_std | 432,859 |
-| water_supply_pct | 411,747 |
+| sewage_pct | 2,369,620 |
+| garbage_collection_pct | 598,927 |
+| LST_Night_mean | 427,827 |
+| LST_Night_std | 427,827 |
+| water_supply_pct | 405,901 |
 | umidmed | 403,920 |
 | tempmax | 402,333 |
 | tempmed | 402,333 |
@@ -943,7 +943,7 @@ New rolling window variables:
 
 # Dataset Coverage Summary
 
-Records: 4,701,298
+Records: 4,634,540
 
 Variables: 87
 
@@ -983,7 +983,7 @@ Generation date: 2026-08-18
 
 ## Citation
 
-If you use DATASET_MULTIMODAL_V8 in scientific work, please cite the corresponding dataset publication when available.
+If you use BraDengue-MM in scientific work, please cite the corresponding dataset publication when available.
 
 Citation details will be provided in a future release of this document.
 
