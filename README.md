@@ -59,8 +59,8 @@ The dataset integrates epidemiological, meteorological, precipitation, remote se
 
 ## Authors
 
-- **Raquel Sánchez-Marqués** (MRC Unit The Gambia at LSHTM)
 - **J. Salvador Sánchez** (Universitat Jaume I)
+- **Raquel Sánchez-Marqués** (MRC Unit The Gambia at LSHTM)
 
 ## Contact
 
