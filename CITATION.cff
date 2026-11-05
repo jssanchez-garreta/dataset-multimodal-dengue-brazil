@@ -4,7 +4,7 @@ type: dataset
 
 doi: 10.5281/zenodo.22029052
 
-title: "BraDengue-MM: A Nationwide Multimodal Dataset and Benchmark for Dengue Forecasting in Brazil"
+title: "BraDengue-MM: A Nationwide Multimodal Dataset for Dengue Surveillance, Nowcasting and Forecasting in Brazil (2010–2025)"
 
 message: "If you use this dataset, please cite it using the metadata from this file."
 
