@@ -43,11 +43,11 @@ date-released: 2026-10-18
 
 preferred-citation:
   type: article
-  title: "BraDengue-MM: A nationwide multimodal dataset and benchmark for machine-learning-based dengue forecasting in Brazil"
+  title: "BraDengue-MM: A nationwide multimodal Earth observation dataset and benchmark for spatial health informatics and prospective dengue forecasting in Brazil"
   authors:
     - family-names: Sánchez
       given-names: J. Salvador
     - family-names: Sánchez-Marqués
       given-names: Raquel
-  journal: "Journal of Biomedical Informatics"
+  journal: "Environmental Research"
   year: 2026
