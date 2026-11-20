@@ -4,10 +4,16 @@ This directory contains scripts used to construct benchmark datasets and evaluat
 
 Evaluated models:
 
+- Naive Persistence
+- Ridge Regression
+- LinearSVR
 - LightGBM
 - XGBoost
 - CatBoost
 - Random Forest
+- 5-Layer MLP
+- Cascade Forest
+- HAE (Horizon Adaptive Multimodal Ensemble)
 
 Included tasks:
 
@@ -29,3 +35,6 @@ Main scripts:
 - 36_bnchmark_svr.py
 - 37_benchmark_mlp_layers.py
 - 40_compare_models.py
+- 51_statistical_comparison.py
+- 52_extended_scientific_experiments.py
+- 53_horizon_adaptive_ensemble.py
