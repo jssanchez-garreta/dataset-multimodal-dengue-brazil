@@ -34,6 +34,7 @@ Main scripts:
 - 35_becnhmark_naive_persistence.py
 - 36_bnchmark_svr.py
 - 37_benchmark_mlp_layers.py
+- 38_benchmark_mlp_v2.py
 - 40_compare_models.py
 - 51_statistical_comparison.py
 - 52_extended_scientific_experiments.py
