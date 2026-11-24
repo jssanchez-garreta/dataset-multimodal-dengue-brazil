@@ -39,3 +39,11 @@ Main scripts:
 - 51_statistical_comparison.py
 - 52_extended_scientific_experiments.py
 - 53_horizon_adaptive_ensemble.py
+- 54_subset_representativeness_audit.py
+- 55_strict_boundary_multihorizon_and_hae.py
+- 56_grouped_modality_attribution_robustness.py
+- 57_sanitation_mnar_and_regional_completeness.py
+- 58_ridge_svr_equivalence_check.py
+- 59_hae_ablation_and_weight_stability.py
+- 60_population_vs_ecostructural_ablation.py
+- 60_population_vs_ecostructural_ablation.py
